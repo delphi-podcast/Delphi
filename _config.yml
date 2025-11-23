@@ -1,9 +1,13 @@
 # url: 'http://delphi.org'
-name: 'The Podcast at Delphi.org'
+title: 'The Podcast at Delphi.org'
 description: 'The Podcast about the Delphi programming language, tools, news and community.'
 baseurl: ""
 permalink: /:title/
 theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
+
+kramdown:
+  syntax_highlighter_opts:
+    disable: true
   - jekyll-remote-theme

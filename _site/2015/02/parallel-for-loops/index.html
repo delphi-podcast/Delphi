@@ -4,7 +4,9 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=8dce9d32f790087ba98d18ab087bc3f67f3d9fc2">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ee22a556e07930945fafe6d37df0eeb2ca48d76f">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup theme-color -->
@@ -51,7 +53,7 @@
     <header>
       <div class="container">
         <a id="a-title" href="/">
-          <h1>delphiorg.github.io</h1>
+          <h1>The Podcast at Delphi.org</h1>
         </a>
         <h2>The Podcast about the Delphi programming language, tools, news and community.</h2>
 
@@ -64,10 +66,12 @@
 
     <div class="container">
       <section id="main_content">
-        <small>3 February 2015</small>
+        <small>3 2015</small>
 <h1>Parallel For Loops</h1>
 
 <p class="view">by Jim McKeeth</p>
+
+
 
 <p><a href="http://docwiki.embarcadero.com/RADStudio/XE7/en/Using_TParallel.For_from_the_Parallel_Programming_Library%20">Parallel For Loops</a> are a hassle-free way to supercharge your program with the Parallel Programming Library. The syntax is similar to the standard <strong>For</strong> loop, with the advantage of each iteration running on in a different task on the thread pool. This allows multiple iterations to run at the same time, taking advantage of the multi-core and hyper-threaded architecture common on laptops, desktops and mobile devices today.</p>
 
@@ -130,8 +134,9 @@ TParallel::For(NULL, Min, Max, MyIteratorEvent);
 
   <small>tags: <em>Architecture</em> - <em>iOS</em> - <em>Mobile</em> - <em>Source Code</em></small>
 
-
       </section>
     </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-delphi.min.js"></script>
   </body>
 </html>

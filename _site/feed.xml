@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-11-22T19:16:24-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">The Podcast at Delphi.org</title><subtitle>The Podcast about the Delphi programming language, tools, news and community.</subtitle><entry><title type="html">The First Computer Program – In Delphi</title><link href="http://localhost:4000/2023/05/the-first-computer-program-in-delphi/" rel="alternate" type="text/html" title="The First Computer Program – In Delphi" /><published>2023-05-10T13:59:33-06:00</published><updated>2023-05-10T13:59:33-06:00</updated><id>http://localhost:4000/2023/05/the-first-computer-program-in-delphi</id><content type="html" xml:base="http://localhost:4000/2023/05/the-first-computer-program-in-delphi/"><![CDATA[<!-- wp:image {"align":"right","id":3614,"sizeSlug":"medium","linkDestination":"media","className":"is-style-rounded"} -->
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.10.0">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2025-11-22T20:18:15-07:00</updated><id>http://localhost:4000/feed.xml</id><title type="html">The Podcast at Delphi.org</title><subtitle>The Podcast about the Delphi programming language, tools, news and community.</subtitle><entry><title type="html">The First Computer Program – In Delphi</title><link href="http://localhost:4000/2023/05/the-first-computer-program-in-delphi/" rel="alternate" type="text/html" title="The First Computer Program – In Delphi" /><published>2023-05-10T13:59:33-06:00</published><updated>2023-05-10T13:59:33-06:00</updated><id>http://localhost:4000/2023/05/the-first-computer-program-in-delphi</id><content type="html" xml:base="http://localhost:4000/2023/05/the-first-computer-program-in-delphi/"><![CDATA[<!-- wp:image {"align":"right","id":3614,"sizeSlug":"medium","linkDestination":"media","className":"is-style-rounded"} -->
 <figure class="wp-block-image alignright size-medium is-style-rounded"><a href="/assets/images/2023/05/image.png"><img src="/assets/images/2023/05/image-200x300.png" alt="Lady Ada Lovelace using a modern day laptop" class="wp-image-3614" /></a></figure>
 <!-- /wp:image -->
 
@@ -56,8 +56,7 @@
 <p>Naturally I wanted to see what her code would look like in <a href="https://gist.github.com/jimmckeeth/193befe1ee2c7c2998666e10c1d36810">Delphi's Object Pascal</a>.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:syntaxhighlighter/code {"language":"delphi"} -->
-<pre class="wp-block-syntaxhighlighter-code">program LovelaceBernoulli;
+<pre><code class="language-delphi">program LovelaceBernoulli;
 
 {$APPTYPE CONSOLE}
 
@@ -192,15 +191,14 @@ begin
   Writeln('--------------');
   Writeln('Press [enter] to close');
   readln;
-end.</pre>
-<!-- /wp:syntaxhighlighter/code -->
+end.
+</code></pre>
 
 <!-- wp:paragraph -->
 <p>While this is one way to calculate the 8th Bernoulli number, what would a modern implementation look like? Using <a href="https://github.com/TurboPack/RudysBigNumbers/">Rudy's Big Numbers library</a> I created a sample application to <a href="https://github.com/TurboPack/RudysBigNumbers/tree/main/Samples/Bernoulli">calculate any Bernoulli</a> number.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:syntaxhighlighter/code {"language":"delphi"} -->
-<pre class="wp-block-syntaxhighlighter-code">function Bernoulli(n: Uint64): BigRational;
+<pre><code class="language-delphi">function Bernoulli(n: Uint64): BigRational;
 begin
   var a: TArray&lt;BigRational&gt;;
   SetLength(a, n + 1);
@@ -213,8 +211,8 @@ begin
     end;
   end;
   Result := a[0];
-end;</pre>
-<!-- /wp:syntaxhighlighter/code -->
+end;
+</code></pre>
 
 <!-- wp:paragraph -->
 <p>You can install the <a href="https://github.com/TurboPack/RudysBigNumbers/tree/main">BigNumbers library</a> via GetIt and this sample application is included.</p>

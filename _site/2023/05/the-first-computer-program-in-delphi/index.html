@@ -4,7 +4,9 @@
     <meta charset='utf-8'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/assets/css/style.css?v=8dce9d32f790087ba98d18ab087bc3f67f3d9fc2">
+    <link rel="stylesheet" href="/assets/css/style.css?v=ee22a556e07930945fafe6d37df0eeb2ca48d76f">
+    <link rel="stylesheet" href="/assets/css/custom.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism-tomorrow.min.css">
     <!-- start custom head snippets, customize with your own _includes/head-custom.html file -->
 
 <!-- Setup theme-color -->
@@ -53,7 +55,7 @@
     <header>
       <div class="container">
         <a id="a-title" href="/">
-          <h1>delphiorg.github.io</h1>
+          <h1>The Podcast at Delphi.org</h1>
         </a>
         <h2>The Podcast about the Delphi programming language, tools, news and community.</h2>
 
@@ -66,10 +68,14 @@
 
     <div class="container">
       <section id="main_content">
-        <small>10 May 2023</small>
+        <small>10 2023</small>
 <h1>The First Computer Program – In Delphi</h1>
 
 <p class="view">by Jim McKeeth</p>
+
+
+  <img src="/assets/images/2023/05/Lovelace-with-Analytic-Engine-and-Bernoulli-numbers-algorithm-1200x675.png" alt="The First Computer Program – In Delphi" style="width: 100%; max-width: 800px; display: block; margin: 0 auto 2rem;">
+
 
 <!-- wp:image {"align":"right","id":3614,"sizeSlug":"medium","linkDestination":"media","className":"is-style-rounded"} -->
 <figure class="wp-block-image alignright size-medium is-style-rounded"><a href="/assets/images/2023/05/image.png"><img src="/assets/images/2023/05/image-200x300.png" alt="Lady Ada Lovelace using a modern day laptop" class="wp-image-3614" /></a></figure>
@@ -129,8 +135,7 @@
 <p>Naturally I wanted to see what her code would look like in <a href="https://gist.github.com/jimmckeeth/193befe1ee2c7c2998666e10c1d36810">Delphi's Object Pascal</a>.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:syntaxhighlighter/code {"language":"delphi"} -->
-<pre class="wp-block-syntaxhighlighter-code">program LovelaceBernoulli;
+<pre><code class="language-delphi">program LovelaceBernoulli;
 
 {$APPTYPE CONSOLE}
 
@@ -265,15 +270,14 @@ begin
   Writeln('--------------');
   Writeln('Press [enter] to close');
   readln;
-end.</pre>
-<!-- /wp:syntaxhighlighter/code -->
+end.
+</code></pre>
 
 <!-- wp:paragraph -->
 <p>While this is one way to calculate the 8th Bernoulli number, what would a modern implementation look like? Using <a href="https://github.com/TurboPack/RudysBigNumbers/">Rudy's Big Numbers library</a> I created a sample application to <a href="https://github.com/TurboPack/RudysBigNumbers/tree/main/Samples/Bernoulli">calculate any Bernoulli</a> number.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:syntaxhighlighter/code {"language":"delphi"} -->
-<pre class="wp-block-syntaxhighlighter-code">function Bernoulli(n: Uint64): BigRational;
+<pre><code class="language-delphi">function Bernoulli(n: Uint64): BigRational;
 begin
   var a: TArray&lt;BigRational&gt;;
   SetLength(a, n + 1);
@@ -286,8 +290,8 @@ begin
     end;
   end;
   Result := a[0];
-end;</pre>
-<!-- /wp:syntaxhighlighter/code -->
+end;
+</code></pre>
 
 <!-- wp:paragraph -->
 <p>You can install the <a href="https://github.com/TurboPack/RudysBigNumbers/tree/main">BigNumbers library</a> via GetIt and this sample application is included.</p>
@@ -297,8 +301,9 @@ end;</pre>
 
   <small>tags: <em>delphi</em> - <em>Delphi Projects</em> - <em>News</em></small>
 
-
       </section>
     </div>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-core.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/components/prism-delphi.min.js"></script>
   </body>
 </html>

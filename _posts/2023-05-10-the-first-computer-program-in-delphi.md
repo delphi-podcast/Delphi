@@ -73,8 +73,8 @@ tags:
 <p>Naturally I wanted to see what her code would look like in <a href="https://gist.github.com/jimmckeeth/193befe1ee2c7c2998666e10c1d36810">Delphi's Object Pascal</a>.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:syntaxhighlighter/code {"language":"delphi"} -->
-<pre class="wp-block-syntaxhighlighter-code">program LovelaceBernoulli;
+```delphi
+program LovelaceBernoulli;
 
 {$APPTYPE CONSOLE}
 
@@ -209,17 +209,17 @@ begin
   Writeln('--------------');
   Writeln('Press [enter] to close');
   readln;
-end.</pre>
-<!-- /wp:syntaxhighlighter/code -->
+end.
+```
 
 <!-- wp:paragraph -->
 <p>While this is one way to calculate the 8th Bernoulli number, what would a modern implementation look like? Using <a href="https://github.com/TurboPack/RudysBigNumbers/">Rudy's Big Numbers library</a> I created a sample application to <a href="https://github.com/TurboPack/RudysBigNumbers/tree/main/Samples/Bernoulli">calculate any Bernoulli</a> number.</p>
 <!-- /wp:paragraph -->
 
-<!-- wp:syntaxhighlighter/code {"language":"delphi"} -->
-<pre class="wp-block-syntaxhighlighter-code">function Bernoulli(n: Uint64): BigRational;
+```delphi
+function Bernoulli(n: Uint64): BigRational;
 begin
-  var a: TArray&lt;BigRational>;
+  var a: TArray<BigRational>;
   SetLength(a, n + 1);
   for var m := 0 to High(a) do
   begin
@@ -230,8 +230,8 @@ begin
     end;
   end;
   Result := a[0];
-end;</pre>
-<!-- /wp:syntaxhighlighter/code -->
+end;
+```
 
 <!-- wp:paragraph -->
 <p>You can install the <a href="https://github.com/TurboPack/RudysBigNumbers/tree/main">BigNumbers library</a> via GetIt and this sample application is included.</p>

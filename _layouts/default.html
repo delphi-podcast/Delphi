@@ -7,12 +7,14 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css?v=' | append: site.github.build_revision | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/custom.css' | relative_url }}">
     <link rel="stylesheet" href="{{ '/assets/css/prism-tomorrow.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/prism-line-numbers.css' | relative_url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/prism-toolbar.css' | relative_url }}">
     {% include head-custom.html %}
 
 {% seo %}
   </head>
 
-  <body>
+  <body class="line-numbers">
 
     <header>
       <div class="container">
@@ -38,5 +40,9 @@
     </div>
       <script src="{{ '/assets/js/prism.js' | relative_url }}"></script>
     <script src="{{ '/assets/js/prism-pascal.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/prism-line-numbers.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/prism-autolinker.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/prism-toolbar.js' | relative_url }}"></script>
+    <script src="{{ '/assets/js/prism-copy-to-clipboard.js' | relative_url }}"></script>
   </body>
 </html>

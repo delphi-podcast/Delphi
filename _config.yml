@@ -6,8 +6,6 @@ permalink: /:title/
 theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
-
 kramdown:
   syntax_highlighter_opts:
     disable: true
-  - jekyll-remote-theme

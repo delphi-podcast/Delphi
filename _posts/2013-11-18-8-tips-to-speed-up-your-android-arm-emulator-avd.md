@@ -1,0 +1,34 @@
+---
+id: 1395
+title: '8 Tips to Speed Up Your Android ARM Emulator (AVD)'
+date: '2013-11-18T17:28:14-07:00'
+author: 'Jim McKeeth'
+layout: post
+guid: 'http://delphi.org/?p=1395'
+permalink: /2013/11/8-tips-to-speed-up-your-android-arm-emulator-avd/
+categories:
+    - News
+tags:
+    - Debugging
+    - News
+---
+
+The Android Emulator is <strong><em>very</em> <em>slow</em></strong>. The main reason is because it is emulating the ARM CPU &amp; GPU, unlike the iOS Simulator, which runs x86 code instead of the ARM code that runs on the actual hardware. This means the iOS Simulator is typically faster than actual hardware, and the Android Emulator is slower than actual hardware. Most Android developers I talk to develop on actual hardware, but sometimes you need the emulator, and when you are using it you need it to run faster.
+
+You may see some articles or tips about using the Intel HAXM, BlueStacks, Genymotion, Android-x86 or some other high performance Android emulator. These almost always are using an x86/Atom Android image, which runs faster because it doesn't need to emulate the CPU, running x86 code on your host CPU (much like the iOS Simulator). Yes, they are faster, but the majority of Android devices (in the USA at least) are ARMv7. So you are technically testing on a niche hardware configuration that is not likely to be what your app runs on in the real world. In some parts of the world, Intel Atom based Android devices are becoming more common, so those emulators do serve a purpose.
+
+The Android Emulator runs an Android Virtual Device or AVD. You can configure and create different Android Virtual Devices with the <a href="http://developer.android.com/tools/devices/managing-avds.html">Android Virtual Device Manager</a> or from the <a href="http://developer.android.com/tools/help/adb.html">adb command-line tool</a>.
+
+Here are some tips to make the ARM Android emulator faster for any Android development tool, but my examples are specific to Delphi XE5. Many of these tips can be combined for better performance. Using these tips I've seen the emulator go from sluggishly terrible to actually usable on a few different systems.
+<ol>
+	<li><strong>Use Actual Hardware</strong> - OK, so this doesn't speed up the emulator, but it is worth mentioning again. There are a number of other advantages besides speed, and Android hardware is pretty cheap compared to iOS hardware. Get a few different devices, and you are set.</li>
+	<li><strong>Don't Run the Emulator in a Virtual Machine</strong> - The emulator is a virtual machine, and running a virtual machine in a virtual machine just compounds the problem. If you are developing in a virtual machine, all is not lost, you can still <a href="http://delphi.org/2013/09/debugging-against-a-remote-android-emulator/">debug against a remote emulator</a> to run the emulator on the host machine.</li>
+	<li><strong>Use Parallels Desktop 9</strong> - If you must run the emulator in a virtual machine <em>(which I don't recommend)</em> I hear reports that Parallels Desktop 9 for Mac OS X is faster than VMWare Fusion. You can test this for yourself with the latest version of VMWare Fusion. The comparison I heard about was between Parallels 9 and Fusion 5, which is now a version behind.</li>
+	<li><strong>Use Host GPU</strong> - There is an option when creating an Android Emulator Instance (called an AVD or Android Virtual Machine) to use the physical GPU on the host machine instead of emulating it in software. This gives a huge performance boost. So create a new <a href="http://docwiki.embarcadero.com/RADStudio/XE5/en/Creating_an_Android_Emulator">Android Emulator</a>, and make sure to enable <strong>Use Host GPU</strong>. (Not, this is incompatible with the other performance option of Snapshot, but I've found Use Host GPU results in better emulator performance, while Snapshot only speeds up emulator startup.)</li>
+	<li><strong>Copy the OpenGLES libraries</strong> - After launching an emulator with Use Host GPU enabled, sometimes you get an error "Could not load OPENGLES emulation library". If you do, then use this tip (if you don't get the error, then skip this tip).<img class="aligncenter size-full wp-image-1396" alt="OpenGLES error" src="http://delphi.org/wp-content/uploads/2013/11/OpenGLES-error.png" width="450" height="300" />This has two common causes, the first is fixed with a reboot. If that doesn't work then you need to copy the necessary DLLs to a different directory so the emulator can find them. Simply <strong>copy lib*.*</strong> from <em>C:\Users\Public\Documents\RAD Studio\12.0\PlatformSDKs\adt-bundle-windows-x86-20130522\sdk\tools\lib</em> up one folder to <em>C:\Users\Public\Documents\RAD Studio\12.0\PlatformSDKs\adt-bundle-windows-x86-20130522\sdk\tools</em> (this is assuming you are using the Android tools installed by RAD Studio. Adjust your paths as necessary). Relaunch the emulator and the error should go away, and your emulator should be <em>much</em> faster. There is another method that involves updating path information, but just copying the necessary files is easier.<a href="http://delphi.org/wp-content/uploads/2013/11/OpenGLES-error.png">
+</a></li>
+	<li><strong>Run your Emulator on a Mac</strong> - I've heard reports that the OpenGLES libraries are faster on Mac OS X than on Windows, because Windows prefers DirectX, while OS X prefers OpenGL. You can use the <a href="http://delphi.org/2013/09/debugging-against-a-remote-android-emulator/">remote emulator setup</a> to make that work (assuming you have a Mac handy). Likewise, if you have a computer with a newer and more powerful GPU and CPU, then use that one. Be sure you combine this tip with the previous two (to Use Host GPU).</li>
+	<li><strong>Run an Older Version of Android</strong> - Sure, Kit Kat is new and Shiney, but not everyone has it yet. The newer versions of Android are typically more demanding on the hardware, so newer  may be slower. Check out the <a href="http://developer.android.com/about/dashboards/index.html">Android Platform Version Dashboard</a> and go back to an older, popular version, or just stick with <em>Gingerbread</em> and know you will support close to 98% of all Android devices.</li>
+	<li><strong>Tweak the AVD Hardware Configuration</strong> - One advantage of the using the Android Emulator is you can test specific hardware configurations, so this one is less useful. But if you increase the memory (within reason) and make the screen smaller (again within reason) that can give you a minor performance increase too.</li>
+</ol>
+Generally speaking, I would suggest everyone<strong> use tips 2, 4, 5 and maybe 7</strong>, but everyone's situation and needs are different, so pick and test the tips that give you the best Android Emulator AVD performance possible. Good luck, and happy Android development and debugging!

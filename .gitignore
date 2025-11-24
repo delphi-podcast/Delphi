@@ -17,4 +17,4 @@ vendor/
 
 /_drafts/
 /_scripts/.ipynb_checkpoints
-htmlproofer_report.txt
+*/htmlproofer_report.txt

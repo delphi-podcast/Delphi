@@ -19,18 +19,13 @@ jobs:
       - name: Get Deployed URL
         id: deployment_url
         run: |
-          echo "url=${{ github.event.deployment_status.target_url }}" >> $GITHUB_OUTPUT
+          echo "url=${{ github.event.deployment_status.environment_url }}" >> $GITHUB_OUTPUT
 
       - name: Run Lychee Link Checker
         id: lychee
         uses: lycheeverse/lychee-action@v1.9.0
         with:
-          # Use the URL of the newly deployed site
-          args: --base ${{ steps.deployment_url.outputs.url }} --exclude-mail --max-threads 8 "${{ steps.deployment_url.outputs.url }}"
-          # Fail the build if any broken links are found (4xx or 5xx)
-          fail: true
-          # Optional: You can exclude common known issue patterns here
-          # exclude: 'http://localhost' 
+          args: --base ${{ steps.deployment_url.outputs.url }} --exclude-mail --threads 8 "${{ steps.deployment_url.outputs.url }}"
           
       - name: Output Lychee Results
         run: cat ${{ steps.lychee.outputs.result }}

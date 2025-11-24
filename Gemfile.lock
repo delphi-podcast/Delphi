@@ -307,6 +307,8 @@ GEM
       ethon (>= 0.9.0, < 0.16.0)
     tzinfo (2.0.6)
       concurrent-ruby (~> 1.0)
+    tzinfo-data (1.2025.2)
+      tzinfo (>= 1.0.0)
     unicode-display_width (1.8.0)
     uri (1.1.1)
     wdm (0.2.0)
@@ -322,6 +324,7 @@ DEPENDENCIES
   html-proofer
   jekyll-redirect-from
   jekyll-sitemap
+  tzinfo-data
   wdm (>= 0.1.0)
 
 BUNDLED WITH

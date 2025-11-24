@@ -12,7 +12,7 @@ tags:
     - News
 ---
 
-[caption id="" align="alignright" width="150" caption="Subscribe via iTunes"]<a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=288704496  "><img title="Subscribe via iTunes" src="/images/itunes_button_tall.gif" alt="Subscribe via iTunes" width="150" height="74" /></a>[/caption]
+[caption id="" align="alignright" width="150" caption="Subscribe via iTunes"]<a href="http://phobos.apple.com/WebObjects/MZStore.woa/wa/viewPodcast?id=288704496  "><img title="Subscribe via iTunes" src="/assets/images/itunes_button_tall.gif" alt="Subscribe via iTunes" width="150" height="74" /></a>[/caption]
 
 The PodCast at Delphi.org is now carried on iTurns so you can get the latest episodes downloaded directly to your iPod.
 

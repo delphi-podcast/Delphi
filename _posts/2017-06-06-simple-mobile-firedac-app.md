@@ -20,11 +20,14 @@ So your form will look something like this . . .
 
 Add an implementation uses clause
 
-[code language="Delphi"]uses FMX.DialogService.Async, IOUtils;[/code]
+```delphi
+uses FMX.DialogService.Async, IOUtils;
+```
 
 And then your <strong>addButtonClick</strong> event handler will look like this . . .
 
-[code language="Delphi"]procedure TForm42.addButtonClick(Sender: TObject);
+```delphi
+procedure TForm42.addButtonClick(Sender: TObject);
 begin
   TDialogServiceAsync.InputQuery('New item',['Name'], [''],
   procedure (const AResult: TModalResult;
@@ -37,11 +40,13 @@ begin
     end;
     UpdateDeleteButton;
   end);
-end;[/code]
+end;
+```
 
 You'll notice a few changes. First of all, I used an anonymous method for the async callback. Also, instead of using an entirely different insert query, I just call <em>InsertRecord</em> on the existing <em>FDQuery1</em>, passing in the value. For simple tables like this one this is so much easier. This really simplified the code in my opinion. Also instead of spreading the code to update the Delete button's visibility all over the place I used a procedure called UpdateDeleteButton. Here is the rest of the code with a few comments.
 
-[code language="Delphi"]procedure TForm42.deleteButtonClick(Sender: TObject);
+```delphi
+procedure TForm42.deleteButtonClick(Sender: TObject);
 begin 
   // Again we use the built in Delete method instead of a separate
   //   Delete query. This just deletes the currently active record.
@@ -78,7 +83,7 @@ procedure TForm42.UpdateDeleteButton;
 begin
   deleteButton.Visible := ListView1.Selected &lt;&gt; nil;
 end;
-[/code]
+```
 
 The beauty of calling the <em>FDQueryCreateTable.ExecSQL</em> is that you don't need to deploy an empty database file. It just creates an empty one the first time it runs.
 

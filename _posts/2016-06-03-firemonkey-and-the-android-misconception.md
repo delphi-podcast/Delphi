@@ -53,7 +53,7 @@ While Atom never had a huge share of the market, it looks like it is going to ha
 <h1>Android Versions</h1>
 Unlike Apple, new version updates don't tend to roll out as fast on Android devices. This means you typically encounter a few different versions of Android running in the wild. It isn't all that bad though. In my opinion, Ice Cream Sandwich (API 15) was really when Android came into its own. It was Honeycomb (API 14) that finally gave tablets some serious love, and ICS merged those new features back to phones. Anything before ICS is really legacy at this point (at least in my opinion). Android tracks the popularity of Android versions on their <a href="https://developer.android.com/about/dashboards/index.html">Developer Dashboard</a>.
 
-[caption id="attachment_2470" align="alignnone" width="500"]<a href="https://developer.android.com/about/dashboards/index.html"><img class="wp-image-2470 size-full" src="/assets/images/2016/06/AndroidChart.png" alt="Android Platform Versions Chart" width="500" height="250" /></a> As of May 2, 2016[/caption]
+<a href="https://developer.android.com/about/dashboards/index.html"><img class="wp-image-2470 size-full" src="/assets/images/2016/06/AndroidChart.png" alt="Android Platform Versions Chart" width="500" height="250" /></a> As of May 2, 2016
 
 Ice Cream Sandwich and <em>older</em> only account for a total of 4.3% of Android devices. While there are feature differences between the top 3, nothing is too revolutionary as to make the others obsolete yet.
 <h1>A Thousand Flowers</h1>

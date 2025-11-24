@@ -17,14 +17,15 @@ The documentation on the <b>Try / Except</b> pattern says that all the code afte
 
 I had just started a new job and was sitting with one of the <em>senior</em> developers to fix some bugs and get to know the codebase. He was creating a local object and so needed to free it. This is the pattern he used:
 
-[code language="delphi"]sl := TStringList.Create;
+```delphi
+sl := TStringList.Create;
 try
   // using sl
 except
   raise;
 end;
 sl.Free;
-[/code]
+```
 
 I looked at the code for a minute quizzically, and then asked why he did that. He explained that everything after the <b>except</b> always gets ran, so he can be sure the memory is freed, but still let the exception bubble up to the global exception handler so it is logged. I told him that I was pretty sure calling <b>raise</b> in the <b>except</b> block prevented the code after the block from being ran. He assured me he had been writing code like this for a <em>long time</em>, and it always works.
 

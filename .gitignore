@@ -1,5 +1,19 @@
-/_drafts/
+
+# Jekyll Build Output
 /_site/
-.jekyll-cache/
-/_scripts/.ipynb_checkpoints
+
+# Incremental build data
 .jekyll-metadata
+
+# Local Cache Files
+.jekyll-metadata
+.jekyll-cache/
+
+# Ruby/Bundler Environment Files
+.bundle/
+vendor/
+
+.vscode/
+
+/_drafts/
+/_scripts/.ipynb_checkpoints

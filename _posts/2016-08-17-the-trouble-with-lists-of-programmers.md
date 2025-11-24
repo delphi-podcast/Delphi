@@ -6,8 +6,6 @@ author: 'Jim McKeeth'
 layout: post
 guid: 'http://delphi.org/?p=2590'
 permalink: /2016/08/the-trouble-with-lists-of-programmers/
-categories:
-    - News
 tags:
     - News
 ---

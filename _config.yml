@@ -9,31 +9,26 @@ baseurl: ""
 
 theme: jekyll-theme-hacker
 
-# Outputting
 timezone: America/Boise
 permalink: /:title/
-paginate_path       : /page:num
-
+# paginate_path       : /page:num
 
 # Where things are
-source              : .
-destination         : ./_site
-collections_dir     : .
-plugins_dir         : _plugins # takes an array of strings and loads plugins in that order
-layouts_dir         : _layouts
-data_dir            : _data
-includes_dir        : _includes
-sass:
-  sass_dir: _sass
-collections:
-  posts:
-    output          : true
+# source              : .
+# destination         : ./_site
+# collections_dir     : .
+# plugins_dir         : _plugins # takes an array of strings and loads plugins in that order
+# layouts_dir         : _layouts
+# data_dir            : _data
+# includes_dir        : _includes
+# sass:
+#   sass_dir: _sass
+# collections:
+#   posts:
+#     output          : true
 
 # Handling Reading
 safe                : false
-include             : [".htaccess"]
-exclude             : ["Gemfile", "Gemfile.lock", "node_modules", "vendor/bundle/", "vendor/cache/", "vendor/gems/", "vendor/ruby/"]
-keep_files          : [".git", ".svn"]
 encoding            : "utf-8"
 markdown_ext        : "markdown,mkdown,mkdn,mkd,md"
 strict_front_matter : false
@@ -44,13 +39,6 @@ limit_posts         : 0
 future              : false
 unpublished         : false
 
-# Conversion
-markdown            : kramdown
-highlighter         : rouge
-lsi                 : false
-excerpt_separator   : "\n\n"
-incremental         : true
-
 # Serving
 detach              : false
 port                : 4000
@@ -58,6 +46,7 @@ host                : 127.0.0.1
 baseurl             : "" # does not include hostname
 show_dir_listing    : false
 
+incremental         : false
 quiet               : false
 verbose             : false
 defaults            : []
@@ -73,6 +62,9 @@ plugins:
   - jekyll-redirect-from
   - jekyll-sitemap    
   - jekyll-seo-tag
+  - jekyll-tagging
+  - jekyll-archives
+  - jekyll-tagging-related_posts
 kramdown:
   syntax_highlighter_opts:
     disable: true # Using Prism

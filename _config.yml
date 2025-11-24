@@ -1,4 +1,5 @@
 # url: 'http://delphi.org'
+url: "https://delphiorg.github.io/"
 title: 'The Podcast at Delphi.org'
 description: 'The Podcast about the Delphi programming language, tools, news and community.'
 baseurl: ""
@@ -7,6 +8,7 @@ theme: jekyll-theme-hacker
 plugins:
   - jekyll-feed
   - jekyll-redirect-from
+  - jekyll-sitemap    
 kramdown:
   syntax_highlighter_opts:
     disable: true
